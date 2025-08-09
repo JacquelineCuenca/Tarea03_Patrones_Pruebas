@@ -1,4 +1,4 @@
-package com.example;
+package com.example.patrones.observer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -7,7 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.example.interfaces.Notificador;
-import com.example.patrones.observer.EmailReservaObserver;
 import com.example.usuarios_y_roles.Usuario;
 
 public class EmailReservaObserverTest {
