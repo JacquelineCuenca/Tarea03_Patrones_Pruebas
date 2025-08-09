@@ -1,0 +1,24 @@
+package com.example.patrones.factory;
+
+import com.example.enums.EstadoHabitacion;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class HabitacionSuiteTest {
+
+    @Test
+    void reservarTestCambiaReservado() {
+        HabitacionSuite suite = new HabitacionSuite(2, 201);
+        suite.estado = EstadoHabitacion.OCUPADA;
+        suite.reservar();
+        assertEquals(EstadoHabitacion.RESERVADA, suite.estado);
+    }
+
+    @Test
+    void mostrarDetallesTestSinErrores() {
+        HabitacionSuite suite = new HabitacionSuite(3, 303);
+        suite.reservar();
+        assertDoesNotThrow(suite::mostrarDetalles);
+        assertEquals(EstadoHabitacion.RESERVADA, suite.estado);
+    }
+}
