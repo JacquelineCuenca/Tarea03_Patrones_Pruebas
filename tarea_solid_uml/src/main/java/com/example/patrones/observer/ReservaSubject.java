@@ -1,0 +1,34 @@
+package com.example.patrones.observer;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.example.Usuario;
+
+public class ReservaSubject {
+
+    private List<ReservaObserver> observers = new ArrayList<>();
+    
+
+    public void agregarObserver(ReservaObserver observer){
+        observers.add(observer);
+    }
+
+    
+    public void removerObserver(ReservaObserver observer) {
+        observers.remove(observer);
+    }
+
+    protected void notificarReservaCreada(String mensaje, Usuario usuario) {
+        for (ReservaObserver observer : observers) {
+            observer.onReservaCreada(mensaje, usuario);
+        }
+    }
+
+    protected void notificarReservaCancelada(String mensaje, Usuario usuario) {
+        for (ReservaObserver observer : observers) {
+            observer.onReservaCancelada(mensaje, usuario);
+        }
+    }
+
+}

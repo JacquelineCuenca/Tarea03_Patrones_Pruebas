@@ -1,20 +1,25 @@
 package com.example;
 
-import com.example.interfaces.Notificador;
+import java.util.List;
+
 import com.example.interfaces.Reservable;
+import com.example.patrones.observer.ReservaObserver;
 
 public class RealizarReserva {
     private PagoService pagoService;
-    private Notificador notificador;
+    private List<ReservaObserver> observers;
 
-    public RealizarReserva(PagoService pagoService, Notificador notificador) {
+    public RealizarReserva(PagoService pagoService, List<ReservaObserver> observers) {
         this.pagoService = pagoService;
-        this.notificador = notificador;
+        this.observers = observers;
     }
 
     public void ejecutar(Usuario usuario, Reservable item) {
         if (!item.verificarDisponibilidad()) {
-            notificador.enviar("El servicio no está disponible.", usuario);
+
+            if (!observers.isEmpty()) {
+                observers.get(0).onReservaCancelada("El servicio no está disponible.", usuario);
+            }
             return;
         }
 
@@ -22,10 +27,17 @@ public class RealizarReserva {
 
         if (pagoService.procesarPago(precio)) {
             Reserva reserva = new Reserva(usuario, item);
+
+            for (ReservaObserver observer : observers) {
+                reserva.agregarObserver(observer);
+            }
+
             reserva.confirmar();
-            notificador.enviar("Reserva confirmada. Gracias por usar TravelStay.", usuario);
         } else {
-            notificador.enviar("El pago ha fallado. Intente nuevamente.", usuario);
+            // Pago fallido, notificamos con el primer observer (por ejemplo)
+            if (!observers.isEmpty()) {
+                observers.get(0).onReservaCancelada("El pago ha fallado. Intente nuevamente.", usuario);
+            }
         }
     }
 }
