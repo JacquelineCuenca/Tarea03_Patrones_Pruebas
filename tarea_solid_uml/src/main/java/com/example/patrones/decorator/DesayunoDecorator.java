@@ -5,6 +5,9 @@ public class DesayunoDecorator extends HabitacionDecorator {
 
     public DesayunoDecorator(IHabitacion habitacion, double costoDesayuno) {
         super(habitacion);
+        if (habitacion == null) {
+            throw new NullPointerException("La habitación no puede ser null");
+        }
         this.costoDesayuno = costoDesayuno;
     }
 

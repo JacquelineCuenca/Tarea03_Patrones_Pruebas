@@ -1,20 +1,18 @@
 package com.example.hospedaje;
 
-import com.example.patrones.factory.Habitacion;
+import com.example.patrones.decorator.IHabitacion;
 import com.example.interfaces.Reservable;
 
 public class Hospedaje implements Reservable {
     private Hotel hotel;
-    private Habitacion habitacion;
-    private double precio;
+    private IHabitacion habitacion;
 
-    public Hospedaje(Habitacion habitacion, double precio) {
+    public Hospedaje(IHabitacion habitacion) {
         this.habitacion = habitacion;
-        this.precio = precio;
     }
 
     public double calcularPrecio() {
-        return precio;
+        return habitacion.calcularPrecio();
     }
 
     public boolean verificarDisponibilidad() {
@@ -24,4 +22,9 @@ public class Hospedaje implements Reservable {
     public void bloquearTemporalmente() {
         habitacion.reservar();
     }
+
+    public IHabitacion getHabitacion() {
+        return habitacion;
+    }
+    
 }
