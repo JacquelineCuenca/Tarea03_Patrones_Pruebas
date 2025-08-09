@@ -9,12 +9,18 @@ package com.example.patrones.factory;
  * @author User
  */
 public class HabitacionSuite extends Habitacion {
+    private double precio = 250.0;
     public HabitacionSuite(int idHotel, int numero) {
         super(idHotel, numero);
     }
 
     @Override
     public void mostrarDetalles() {
-        System.out.println("Habitación SUITE Nº " + numero + " - Hotel ID: " + idHotel + " - Estado: " + estado);
+        System.out.println("Habitación SUITE Nº " + numero + " - Hotel ID: " + idHotel + " - Estado: " + estado + " - Precio: $" + precio);
+    }
+
+    @Override
+    public double calcularPrecio() {
+        return precio;
     }
 }
