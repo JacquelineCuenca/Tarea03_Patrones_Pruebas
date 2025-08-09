@@ -1,7 +1,7 @@
 package com.example.patrones.observer;
 
-import com.example.Usuario;
 import com.example.interfaces.Notificador;
+import com.example.usuarios_y_roles.Usuario;
 
 public class EmailReservaObserver implements ReservaObserver {
 

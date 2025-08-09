@@ -3,7 +3,7 @@ package com.example.patrones.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.Usuario;
+import com.example.usuarios_y_roles.Usuario;
 
 public class ReservaSubject {
 

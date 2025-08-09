@@ -1,6 +1,6 @@
 package com.example.interfaces;
 
-import com.example.Incidente;
+import com.example.soporte.Incidente;
 
 public interface GestorDeAccion {
    
