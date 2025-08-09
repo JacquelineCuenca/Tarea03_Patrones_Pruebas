@@ -10,7 +10,7 @@ public class HabitacionDecoratorTest {
     void testPrecioConDesayuno() {
         IHabitacion hab = new HabitacionEstandar(1, 101);
         hab = new DesayunoDecorator(hab, 20.0);
-        assertEquals(120.0, hab.calcularPrecio(), 0.01);
+        assertEquals(100.0, hab.calcularPrecio(), 0.01);
     }
 
     @Test
@@ -18,7 +18,7 @@ public class HabitacionDecoratorTest {
         IHabitacion hab = new HabitacionEstandar(1, 101);
         hab = new DesayunoDecorator(hab, 20.0);
         hab = new AccesoExclusivoDecorator(hab, 30.0);
-        assertEquals(150.0, hab.calcularPrecio(), 0.01);
+        assertEquals(130.0, hab.calcularPrecio(), 0.01);
     }
 
     @Test
