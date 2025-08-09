@@ -1,5 +1,6 @@
 package com.example.reservas;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.interfaces.Reservable;
@@ -12,8 +13,16 @@ public class RealizarReserva {
     private List<ReservaObserver> observers;
 
     public RealizarReserva(PagoService pagoService, List<ReservaObserver> observers) {
+
+        if (pagoService == null) {
+            throw new IllegalArgumentException("PagoService no puede ser null");
+        }
+        if (observers == null) {
+            this.observers = new ArrayList<>();
+        } else {
+            this.observers = observers;
+        }
         this.pagoService = pagoService;
-        this.observers = observers;
     }
 
     public void ejecutar(Usuario usuario, Reservable item) {
