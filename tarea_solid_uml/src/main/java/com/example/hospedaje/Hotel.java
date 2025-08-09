@@ -1,5 +1,6 @@
 package com.example.hospedaje;
 
+import com.example.patrones.factory.Habitacion;
 import java.util.ArrayList;
 import java.util.List;
 

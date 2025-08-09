@@ -1,5 +1,6 @@
 package com.example.hospedaje;
 
+import com.example.patrones.factory.Habitacion;
 import com.example.interfaces.Reservable;
 
 public class Hospedaje implements Reservable {
