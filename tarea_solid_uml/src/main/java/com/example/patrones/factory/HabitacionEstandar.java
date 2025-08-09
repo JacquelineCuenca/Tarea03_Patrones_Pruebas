@@ -9,4 +9,10 @@ public class HabitacionEstandar extends Habitacion {
     public void mostrarDetalles() {
         System.out.println("Habitación ESTÁNDAR Nº " + numero + " - Hotel ID: " + idHotel + " - Estado: " + estado);
     }
+
+
+    @Override
+    public double calcularPrecio() {
+        return 80.0;
+    }
 }

@@ -8,7 +8,7 @@ public class AccesoExclusivoDecoratorTest {
 
     @Test
     void testPrecioConAccesoExclusivo() {
-        IHabitacion hab = new HabitacionEstandar(1, 102);
+        IHabitacion hab = new HabitacionEstandar(1, 101);
         hab = new AccesoExclusivoDecorator(hab, 35.0);
         assertEquals(135.0, hab.calcularPrecio(), 0.01);
     }
