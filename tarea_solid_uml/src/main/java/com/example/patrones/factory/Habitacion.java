@@ -1,9 +1,7 @@
 package com.example.patrones.factory;
 import com.example.enums.EstadoHabitacion;
-import com.example.enums.TipoHabitacion;
-import com.example.patrones.decorator.IHabitacion;
 
-public abstract class Habitacion implements IHabitacion {
+public abstract class Habitacion {
     protected int idHotel;
     protected int numero;
     protected EstadoHabitacion estado; // disponible, reservada, ocupada, mantenimiento
@@ -25,5 +23,4 @@ public abstract class Habitacion implements IHabitacion {
     
     public abstract void mostrarDetalles();
 
-    public abstract double calcularPrecio();
 }
