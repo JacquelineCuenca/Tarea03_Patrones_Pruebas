@@ -1,5 +1,6 @@
 
 package com.example.patrones.factory;
+
 import com.example.enums.EstadoHabitacion;
 import com.example.patrones.decorator.IHabitacion;
 
@@ -21,14 +22,12 @@ public abstract class Habitacion implements IHabitacion {
     }
 
     public boolean estaDisponible() {
-       return estado.equals(EstadoHabitacion.DISPONIBLE);
- 
+        return estado.equals(EstadoHabitacion.DISPONIBLE);
+
     }
 
     public void reservar() {
         this.estado = EstadoHabitacion.RESERVADA;
     }
-    
-    public abstract void mostrarDetalles();
 
 }

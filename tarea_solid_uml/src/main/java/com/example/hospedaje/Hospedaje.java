@@ -11,10 +11,12 @@ public class Hospedaje implements Reservable {
         this.habitacion = habitacion;
     }
 
+    @Override
     public double calcularPrecio() {
         return habitacion.calcularPrecio();
     }
 
+    @Override
     public boolean verificarDisponibilidad() {
         return habitacion.estaDisponible();
     }
