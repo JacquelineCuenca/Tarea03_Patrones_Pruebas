@@ -21,4 +21,16 @@ class HabitacionSuiteTest {
         assertDoesNotThrow(suite::mostrarDetalles);
         assertEquals(EstadoHabitacion.RESERVADA, suite.estado);
     }
+     @Test
+    void estaDisponibleRetornaTrueSiDisponible() {
+        HabitacionSuite suite = new HabitacionSuite(5, 501);
+        assertTrue(suite.estaDisponible());
+    }
+
+    @Test
+    void calcularPrecioLanzaUnsupportedOperation() {
+        HabitacionSuite suite = new HabitacionSuite(5, 501);
+        assertThrows(UnsupportedOperationException.class, suite::calcularPrecio);
+    }
+
 }
