@@ -39,43 +39,22 @@ public class UsuarioTest {
     /**
      * Test of getCorreo method, of class Usuario.
      */
-    @Test
-    public void testGetCorreo() {
-        System.out.println("getCorreo");
-        Usuario instance = null;
-        String expResult = "";
-        String result = instance.getCorreo();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      @Test
+    public void testGetId() {
+        Usuario usuario = new Usuario(1, "Axel", "axel@mail.com");
+        assertEquals(1, usuario.getId());
     }
 
-    /**
-     * Test of getNombre method, of class Usuario.
-     */
     @Test
     public void testGetNombre() {
-        System.out.println("getNombre");
-        Usuario instance = null;
-        String expResult = "";
-        String result = instance.getNombre();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Usuario usuario = new Usuario(2, "Juan", "juan@mail.com");
+        assertEquals("Juan", usuario.getNombre());
     }
 
-    /**
-     * Test of getId method, of class Usuario.
-     */
     @Test
-    public void testGetId() {
-        System.out.println("getId");
-        Usuario instance = null;
-        int expResult = 0;
-        int result = instance.getId();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testGetCorreo() {
+        Usuario usuario = new Usuario(3, "Ana", "ana@mail.com");
+        assertEquals("ana@mail.com", usuario.getCorreo());
     }
     
 }
