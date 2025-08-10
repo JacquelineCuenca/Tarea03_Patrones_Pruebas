@@ -11,10 +11,15 @@ public class Reserva extends ReservaSubject {
     private Reservable item;
     private LocalDateTime fecha;
     private String estado;
-    // pendiente, confirmada, cancelada
     private String id;
 
     public Reserva(Usuario usuario, Reservable item) {
+        if (usuario == null) {
+            throw new IllegalArgumentException("El usuario no puede ser nulo");
+        }
+        if (item == null) {
+            throw new IllegalArgumentException("El ítem a reservar no puede ser nulo");
+        }
         this.usuario = usuario;
         this.item = item;
         this.fecha = LocalDateTime.now();
@@ -24,7 +29,7 @@ public class Reserva extends ReservaSubject {
 
     public void confirmar() {
         this.estado = "confirmada";
-        notificarReservaCreada("Reserva confirmada ID: " + id,  usuario);
+        notificarReservaCreada("Reserva confirmada ID: " + id, usuario);
     }
 
     public void cancelar() {
@@ -32,7 +37,24 @@ public class Reserva extends ReservaSubject {
         notificarReservaCancelada("Reserva cancelada ID: " + id, usuario);
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public Reservable getItem() {
+        return item;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+
     public String getEstado() {
         return estado;
     }
+
+    public String getId() {
+        return id;
+    }
+
 }
