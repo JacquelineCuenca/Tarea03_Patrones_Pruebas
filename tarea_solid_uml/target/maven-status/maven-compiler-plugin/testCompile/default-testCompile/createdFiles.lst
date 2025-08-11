@@ -2,7 +2,11 @@ com\example\usuarios_y_roles\UsuarioTest.class
 com\example\usuarios_y_roles\AgenteDeSoporteTest$1.class
 com\example\usuarios_y_roles\AdministradorTest.class
 com\example\usuarios_y_roles\AgenteDeSoporteTest.class
+com\example\hospedaje\HospedajeTest.class
+com\example\hospedaje\HotelTest$HabitacionStub.class
 com\example\usuarios_y_roles\AgenteDeSoporteTest$4.class
+com\example\hospedaje\HotelTest.class
 com\example\usuarios_y_roles\AgenteDeSoporteTest$2.class
 com\example\gestion\GestorConsolaTest.class
+com\example\hospedaje\HospedajeTest$HabitacionStub.class
 com\example\usuarios_y_roles\AgenteDeSoporteTest$3.class

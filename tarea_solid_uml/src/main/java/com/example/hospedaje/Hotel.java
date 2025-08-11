@@ -20,4 +20,7 @@ public class Hotel {
     public void agregarHabitacion(Habitacion hab){
         habitaciones.add(hab);
     }
+    public List<Habitacion> getHabitaciones() {
+    return habitaciones;
+}
 }
