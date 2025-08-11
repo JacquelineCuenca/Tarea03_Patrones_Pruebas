@@ -1,6 +1,7 @@
 com\example\usuarios_y_roles\UsuarioTest.class
 com\example\usuarios_y_roles\AgenteDeSoporteTest$1.class
 com\example\usuarios_y_roles\AdministradorTest.class
+com\example\pagos\PagoServiceTest.class
 com\example\usuarios_y_roles\AgenteDeSoporteTest.class
 com\example\hospedaje\HospedajeTest.class
 com\example\hospedaje\HotelTest$HabitacionStub.class
